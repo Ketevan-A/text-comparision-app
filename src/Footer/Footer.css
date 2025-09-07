@@ -1,0 +1,29 @@
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 214px;
+    height: 20px;
+    padding: 20px 14px 20px 12px;
+    border-top: 1px solid var(--line-color);
+}
+#profile{
+    display: flex;
+    align-items: center;
+    gap:5px;
+}
+#profile-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    background-color: var(--profile-icon-color);
+    border-radius: 50%;
+    border-radius: 50%;
+    border: 1px solid white;
+    font-size: 10px;
+    font-weight: bold;
+    color: var(--text-color);
+    line-height: 24px;
+}

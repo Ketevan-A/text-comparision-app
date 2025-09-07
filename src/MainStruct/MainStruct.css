@@ -1,0 +1,82 @@
+main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    align-items: center;
+    color: var(--option-text-color);
+    gap:24px;
+
+}
+.options{
+    display: flex;
+    align-items: center;
+    gap:24px;
+    font-size: 14px;
+}
+.dropdown {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: 155px;
+}
+
+.dropdown button {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--line-color);
+    border-radius: 8px;
+    background-color: white;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;              
+    box-sizing: border-box;   
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    border: 1px solid var(--line-color);
+    font-size: 12px;
+    padding: 16px 12px;
+    gap: 12px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: var(--sidebar-color);
+}
+.top{
+    display: flex;
+    width: 100%;
+    padding-bottom: 17px;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line-option-bottom);
+}
+.add-new, #compare-button{
+    display: flex;
+    background-color: var(--button-colors);
+    align-items: center;
+    color: #FFFFFF;
+    gap:4px;
+    justify-content: center;
+    border-radius: 6px;
+    width: 150px;
+}
+.add-new img{
+    width: 24px;
+    height: 24px;
+}
+#compare-button{
+    width: 142px;
+    height: 48px;
+    border-style: none;
+
+}

@@ -1,0 +1,22 @@
+.compare{
+    height: 432px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.compare textarea {
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 18px;
+    background-color:  var(--input-background-color);
+}
+.compare textarea ::placeholder{
+    text-align: left;
+  vertical-align: top;
+
+}

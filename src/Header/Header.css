@@ -1,0 +1,24 @@
+header{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding:  20px 27px  0 24px;
+    gap: 51px;
+}
+
+.logo{
+    display: flex;
+    width: 110px;
+    padding-top: 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+.logoPNG{
+    height: 44px;
+    width: auto;
+}
+
+.close-open{
+    position: absolute; 
+    right: 27px;
+}
