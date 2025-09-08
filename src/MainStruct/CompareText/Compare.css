@@ -6,7 +6,7 @@
     align-items: center;
     margin-bottom: 8px;
 }
-.compare textarea {
+/* .compare textarea {
     height: 100%;
     width: 100%;
     border: none;
@@ -19,4 +19,21 @@
     text-align: left;
   vertical-align: top;
 
+} */
+.fake-textarea{
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 18px;
+    line-height: 26px;
+    weight:400;
+    background-color:  var(--input-background-color);
+    color:var(--option-text-color);
+}
+.fake-textarea[contenteditable]:empty:before {
+  content: attr(data-placeholder);
+    color:var(--option-text-color);
+  pointer-events: none; 
 }

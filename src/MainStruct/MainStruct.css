@@ -60,9 +60,9 @@ input[type="checkbox"] {
     justify-content: space-between;
     border-bottom: 1px solid var(--line-option-bottom);
 }
-.add-new, #compare-button{
+#add-new, #compare-button{
     display: flex;
-    background-color: var(--button-colors);
+   
     align-items: center;
     color: #FFFFFF;
     gap:4px;
@@ -70,7 +70,13 @@ input[type="checkbox"] {
     border-radius: 6px;
     width: 150px;
 }
-.add-new img{
+    .not .activated{
+        background-color:var(--button-color);
+    }
+.activated{
+    background-color: var(--not-activated-button);
+}
+#add-new img{
     width: 24px;
     height: 24px;
 }
@@ -78,5 +84,4 @@ input[type="checkbox"] {
     width: 142px;
     height: 48px;
     border-style: none;
-
 }
