@@ -6,6 +6,12 @@ const Compare = forwardRef((props, ref) => {
   const firstRef = useRef();
   const secondRef = useRef();
 
+  function handleInput() {
+    const text1 = firstRef.current.innerText.trim();
+    const text2 = secondRef.current.innerText.trim();
+    props.onTextChange?.(text1.length > 0 || text2.length > 0);
+  }
+
   useImperativeHandle(ref, () => ({
     runCompare() {
       const text1 = firstRef.current.innerText;
@@ -19,19 +25,29 @@ const Compare = forwardRef((props, ref) => {
       firstRef.current.innerHTML = diff
         .map((part) => {
           if (part.removed) return `<span style="${styleRemoved}">${part.value}</span>`;
-          if(!part.added) return part.value;
+          if (!part.added) return part.value;
           return "";
         })
         .join("");
+
       secondRef.current.innerHTML = diff
         .map((part) => {
           if (part.added) return `<span style="${styleAdded}">${part.value}</span>`;
-          if(!part.removed) return part.value;
+          if (!part.removed) return part.value;
           return "";
         })
         .join("");
     },
-    
+    hasText() {
+      const text1 = firstRef.current.innerText.trim();
+      const text2 = secondRef.current.innerText.trim();
+      return text1.length > 0 || text2.length > 0;
+    },
+    clear() {
+      firstRef.current.innerHTML = "";
+      secondRef.current.innerHTML = "";
+      props.onTextChange?.(false); 
+    }
   }));
 
   return (
@@ -41,6 +57,7 @@ const Compare = forwardRef((props, ref) => {
         ref={firstRef}
         contentEditable
         data-placeholder="დაიწყე წერა..."
+        onInput={handleInput}
       ></div>
       <img src="/images/Group.png" alt="arrow" />
       <div
@@ -48,9 +65,11 @@ const Compare = forwardRef((props, ref) => {
         ref={secondRef}
         contentEditable
         data-placeholder="დაიწყე წერა..."
+        onInput={handleInput}
       ></div>
     </div>
   );
 });
+
 
 export default Compare;

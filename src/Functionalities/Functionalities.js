@@ -1,34 +1,32 @@
-import './Functionalities.css'
+import './Functionalities.css';
 
+function Functionalities() {
+  const items = [
+    { icon: '/images/sidebar/check.png', text: ['მართლმწერი'], id : 'top'},
+    { icon: '/images/sidebar/Spelling.png', text: ['ტექსტის შედარება'], id:'compare-text' },
+    { icon: '/images/sidebar/mic.png', text: ['ხმა', 'ტექსტი'], arrow: true, id : 'bottom'},
+    { icon: '/images/sidebar/align-center.png', text: ['ტექსტი', 'ხმა'], arrow: true, id: ''},
+    { icon: '/images/sidebar/programming-code-document.png', text: ['PDF კონვერტაცია'], id:'' },
+  ];
 
-function Functionalities(){
-
-return <div className="functionalities">
-        <div>
-            <img src = '/images/sidebar/check.png' className='icon' alt = 'check'/>
-            <p>მართლმწერი</p>
+  return (
+    <div className="functionalities">
+      {items.map((item, index) => (
+        <div key={index} id = {item.id}>
+           
+          <img src={item.icon} className="icon" alt="icon" />
+          <p>{item.text[0]}</p>
+        {item.id =='compare-text' && <img src = '/images/sidebar/downArrow.png' id = 'down-arrow'/>}
+          {item.arrow && (
+            <>
+              <img src="/images/sidebar/arrow-right.png" className="arrow" alt="arrow" />
+              <p>{item.text[1]}</p>
+            </>
+          )}
         </div>
-        <div id = 'compare-text'>
-            <img src = '/images/sidebar/Spelling.png'  className='icon' alt = 'compare'/>
-            <p>ტექსტის შედარება</p>
-        </div>
-        <div>
-            <img src = '/images/sidebar/mic.png'  className='icon' alt = 'speech-text'/>
-            <p>ხმა </p>
-            <img src = '/images/sidebar/arrow-right.png' className = 'arrow' alt = 'arrow'/>
-            <p>ტექსტი</p>
-        </div>
-        <div>
-            <img src = '/images/sidebar/align-center.png'  className='icon'  alt = 'text-speech'/>
-            <p>ტექსტი</p>
-            <img src = '/images/sidebar/arrow-right.png' className = 'arrow' alt = 'arrow'/>
-              <p>ხმა</p>          
-        </div>
-        <div>
-            <img src = '/images/sidebar/programming-code-document.png'  className='icon' alt = 'convert'/>
-            <p>PDF კონვერტაცია</p>
-        </div>
-
+      ))}
     </div>
+  );
 }
+
 export default Functionalities;

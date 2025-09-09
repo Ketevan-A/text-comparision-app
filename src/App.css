@@ -7,6 +7,7 @@
   text-decoration: none;
   list-style: none;
   display: flex;
+
 }
 .sidebar{
   display: flex;
@@ -16,4 +17,16 @@
   color: white;
   width: 240px;
   height: 100%;
+}
+@media (max-width: 1024px)and (min-width:768px){
+  .App{
+    flex-direction: column;
+  }
+  .sidebar{
+    width: 100%;
+    height: auto;
+  }
+  .sidebar{
+    background-color: white;
+  }
 }
