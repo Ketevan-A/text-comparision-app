@@ -27,17 +27,17 @@ function MainStruct() {
   useOutsideClick(dropdownRef, () => setIsOpen(false));
 
   const handleNew = () => {
+      compareRef.current?.clear();
+
+  };
+  const hide = 'display:none;';
+  const appear = 'display:block;'
+  const handleCompare = () => {
     setIsLoading(true); 
     setTimeout(() => {
-      setIsLoading(false); 
-      compareRef.current?.clear();
-    }, 2000);
-  };
-
-  const handleCompare = () => {
-
+      setIsLoading(false);
       compareRef.current?.runCompare();
-
+    }, 2000);
   };
 
   return (
@@ -71,11 +71,13 @@ function MainStruct() {
           <p>ახლის გახსნა</p>
         </div>
       </div>
-      {isLoading ? (
-        <Loading />
-      ) : (
-        <Compare ref={compareRef} onTextChange={setHasText} />
-      )}
+      {isLoading && <Loading />}
+      <Compare
+        ref={compareRef}
+        onTextChange={setHasText}
+        style={{ display: isLoading ? 'none' : 'flex' }}
+      />
+
       <button
         id="compare-button"
         className={hasText ? "not" : "activated"}

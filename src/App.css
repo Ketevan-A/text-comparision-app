@@ -7,7 +7,7 @@
   text-decoration: none;
   list-style: none;
   display: flex;
-
+  overflow-x: hidden;
 }
 .sidebar{
   display: flex;
@@ -18,7 +18,7 @@
   width: 240px;
   height: 100%;
 }
-@media (max-width: 1024px)and (min-width:768px){
+@media (max-width: 1024px){
   .App{
     flex-direction: column;
   }
@@ -29,4 +29,5 @@
   .sidebar{
     background-color: white;
   }
+
 }

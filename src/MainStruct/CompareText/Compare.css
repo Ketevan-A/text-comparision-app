@@ -1,39 +1,49 @@
 .compare{
     height: 432px;
     width: 100%;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     margin-bottom: 8px;
+    gap:10px;
 }
-/* .compare textarea {
-    height: 100%;
-    width: 100%;
-    border: none;
-    border-radius: 8px;
-    padding: 12px;
-    font-size: 18px;
-    background-color:  var(--input-background-color);
-}
-.compare textarea ::placeholder{
-    text-align: left;
-  vertical-align: top;
 
-} */
 .fake-textarea{
+    position: relative;
+    padding: 12px;
     height: 100%;
     width: 100%;
     border: none;
     border-radius: 8px;
-    padding: 12px;
     font-size: 18px;
     line-height: 26px;
-    weight:400;
     background-color:  var(--input-background-color);
     color:var(--option-text-color);
+    overflow-y: auto;      
+    overflow-x: hidden;    
+    word-break: break-word;
 }
 .fake-textarea[contenteditable]:empty:before {
   content: attr(data-placeholder);
-    color:var(--option-text-color);
+  color:var(--option-text-color);
   pointer-events: none; 
+  position: absolute;   
+  top: 12px;            
+  left: 12px;
+}
+
+@media (max-width:768px){
+  .compare{
+    display: flex;
+    flex-direction: column;
+    
+    gap:16px;
+  }
+  .fake-textarea{
+    height: 166px;
+    padding: 0;
+  }
+  .compare > img{
+    rotate:90deg;
+  }
 }

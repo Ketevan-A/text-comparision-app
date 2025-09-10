@@ -1,4 +1,4 @@
-import React, { useRef, forwardRef, useImperativeHandle } from "react";
+import React, { useRef, forwardRef, useImperativeHandle, useState } from "react";
 import { diffChars } from "diff";
 import "./Compare.css";
 
@@ -6,21 +6,25 @@ const Compare = forwardRef((props, ref) => {
   const firstRef = useRef();
   const secondRef = useRef();
 
-  function handleInput() {
-    const text1 = firstRef.current.innerText.trim();
-    const text2 = secondRef.current.innerText.trim();
-    props.onTextChange?.(text1.length > 0 || text2.length > 0);
+  const [text1, setText1] = useState("");
+  const [text2, setText2] = useState("");
+
+  function handleInput1() {
+    setText1(firstRef.current.innerText);
+    props.onTextChange?.(firstRef.current.innerText.length > 0 || text2.length > 0);
+  }
+
+  function handleInput2() {
+    setText2(secondRef.current.innerText);
+    props.onTextChange?.(text1.length > 0 || secondRef.current.innerText.length > 0);
   }
 
   useImperativeHandle(ref, () => ({
     runCompare() {
-      const text1 = firstRef.current.innerText;
-      const text2 = secondRef.current.innerText;
-
       const diff = diffChars(text1, text2);
 
       const styleRemoved = "background-color: var(--removed-text-color); color: white;";
-      const styleAdded   = "background-color: var(--added-text-color); color: white;";
+      const styleAdded = "background-color: var(--added-text-color); color: white;";
 
       firstRef.current.innerHTML = diff
         .map((part) => {
@@ -39,25 +43,25 @@ const Compare = forwardRef((props, ref) => {
         .join("");
     },
     hasText() {
-      const text1 = firstRef.current.innerText.trim();
-      const text2 = secondRef.current.innerText.trim();
       return text1.length > 0 || text2.length > 0;
     },
     clear() {
+      setText1("");
+      setText2("");
       firstRef.current.innerHTML = "";
       secondRef.current.innerHTML = "";
-      props.onTextChange?.(false); 
-    }
+      props.onTextChange?.(false);
+    },
   }));
-
+  
   return (
-    <div className="compare">
+    <div className="compare" style={props.style}>
       <div
         className="fake-textarea"
         ref={firstRef}
         contentEditable
         data-placeholder="დაიწყე წერა..."
-        onInput={handleInput}
+        onInput={handleInput1}
       ></div>
       <img src="/images/Group.png" alt="arrow" />
       <div
@@ -65,11 +69,10 @@ const Compare = forwardRef((props, ref) => {
         ref={secondRef}
         contentEditable
         data-placeholder="დაიწყე წერა..."
-        onInput={handleInput}
+        onInput={handleInput2}
       ></div>
     </div>
   );
 });
-
 
 export default Compare;
