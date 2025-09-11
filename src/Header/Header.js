@@ -1,8 +1,8 @@
 import Functionalities from "../Functionalities/Functionalities";
 import './Header.css'
 function Header(){
+    //header component
     return <header>
-
         <img src = '/images/sidebar/chevrons-left.png' className = 'close-open' alt = 'close-open-button'></img>
         
         <div className="logo-container">

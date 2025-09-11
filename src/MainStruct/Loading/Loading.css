@@ -1,11 +1,14 @@
-.loading-container{
+/* Container for loading state, hidden by default */
+.loading-container {
     display: none;
     justify-content: center;
     align-items: center;
     height: 432px;
     width: 100%;
 }
-.loading{
+
+/* Loading box with text and optional icon */
+.loading {
     width: 246px;
     height: 46px;
     border-radius: 8px;
@@ -14,33 +17,34 @@
     padding: 16px;
     display: flex;
     align-items: center;
+    gap: 8px; /* Space between text and icon */
+}
+
+
+
+
+/* Container for moving/loading elements */
+#moving {
+    display: flex;
+    align-items: center;
+    height: 20px;
     gap: 8px;
 }
-.information{
 
-}
-#moving {
-  display: flex;
-  align-items: center;
-  height: 20px;
-  gap: 8px;
-
-}
-
+/* The animated loading line inside the progress bar */
 #loading-line {
-  background-color: var(--button-colors);
-  height: 8px;
-  border-radius: 64px;
-  width: 0;
-  transition: width 0.2s linear;
+    background-color: var(--button-colors);
+    height: 8px;
+    border-radius: 64px;
+    width: 0; /* Initial width */
+    transition: width 0.2s linear; /* Smooth animation */
 }
 
+/* Progress bar background container */
 .loading-bar-container {
-  flex: 1;
-  background-color: var(--line-color);
-  border-radius: 64px;
-  height: 8px;
-  overflow: hidden;
+    flex: 1;
+    background-color: var(--line-color);
+    border-radius: 64px;
+    height: 8px;
+    overflow: hidden; /* Ensure loading line stays within container */
 }
-
-

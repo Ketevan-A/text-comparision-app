@@ -1,56 +1,72 @@
-header{
+/* Header container */
+header {
     display: flex;
     flex-direction: column;
     position: relative;
-    padding:  20px 0px  0 24px;
+    padding: 20px 0 0 24px;
     gap: 51px;
 }
 
-.logo{
+/* Logo section */
+.logo {
     display: flex;
     width: 110px;
     padding-top: 30px;
     justify-content: space-between;
     align-items: center;
 }
-.logoPNG{
+
+/* Logo image */
+.logoPNG {
     height: 44px;
     width: auto;
 }
 
-.close-open{
+/* Close/open button for sidebar */
+.close-open {
     position: absolute; 
     right: 27px;
 }
-.menu{
+
+/* Menu icon (hamburger) */
+.menu {
     display: none;
-    width:24px;
+    width: 24px;
     height: 24px;
 }
-@media  (max-width: 1024px){
-    header{
+
+/* Responsive styles for tablets and smaller screens */
+@media (max-width: 1024px) {
+    /* Header adjustments */
+    header {
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        padding: 12px 30px 0px 30px;
+        padding: 12px 30px 0 30px;
         gap: 12px;
         background-color: var(--sidebar-color);
     }
-    .close-open{
+
+    /* Hide close/open button on smaller screens */
+    .close-open {
         display: none;
     }
 
-    .menu{
-        display:block;
+    /* Show menu (hamburger) icon on smaller screens */
+    .menu {
+        display: block;
     }
-    .logo{
+
+    /* Remove top padding from logo on small screens */
+    .logo {
         padding-top: 0;
     }
-    .logo-container{
+
+    /* Logo container layout */
+    .logo-container {
         display: flex;
         width: 100%;
         align-items: center;
         justify-content: space-between;
     }
-
 }

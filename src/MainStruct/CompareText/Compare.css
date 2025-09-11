@@ -1,14 +1,16 @@
-.compare{
+/* Container for the text comparison */
+.compare {
     height: 432px;
     width: 100%;
-    display: none;
+    display: none; /* Hidden by default, shown on mobile via media query */
     justify-content: center;
     align-items: center;
     margin-bottom: 8px;
-    gap:10px;
+    gap: 10px; 
 }
 
-.fake-textarea{
+/* Fake text areas that act like editable text boxes */
+.fake-textarea {
     position: relative;
     padding: 12px;
     height: 100%;
@@ -17,33 +19,40 @@
     border-radius: 8px;
     font-size: 18px;
     line-height: 26px;
-    background-color:  var(--input-background-color);
-    color:var(--option-text-color);
+    background-color: var(--input-background-color);
+    color: var(--option-text-color);
     overflow-y: auto;      
     overflow-x: hidden;    
     word-break: break-word;
 }
+
+/* Placeholder text for empty contentEditable divs */
 .fake-textarea[contenteditable]:empty:before {
-  content: attr(data-placeholder);
-  color:var(--option-text-color);
-  pointer-events: none; 
-  position: absolute;   
-  top: 12px;            
-  left: 12px;
+    content: attr(data-placeholder); /* Show placeholder from data attribute */
+    color: var(--option-text-color);
+    pointer-events: none; 
+    position: absolute;   
+    top: 12px;            
+    left: 12px;
 }
 
-@media (max-width:768px){
-  .compare{
-    display: flex;
-    flex-direction: column;
-    
-    gap:16px;
-  }
-  .fake-textarea{
-    height: 166px;
-    padding: 0;
-  }
-  .compare > img{
-    rotate:90deg;
-  }
+/* Responsive styles for mobile screens */
+@media (max-width: 768px) {
+    /* Show compare container and stack vertically */
+    .compare {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    /* Adjust text area height and padding */
+    .fake-textarea {
+        height: 166px;
+        padding: 0;
+    }
+
+    /* Rotate the arrow image */
+    .compare > img {
+        rotate: 90deg;
+    }
 }

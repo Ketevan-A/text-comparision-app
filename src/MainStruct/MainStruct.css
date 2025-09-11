@@ -1,25 +1,30 @@
-main{
+/* Main container */
+main {
     width: 100%;
     display: flex;
     flex-direction: column;
     padding: 24px;
     align-items: center;
     color: var(--option-text-color);
-    gap:24px;
-
+    gap: 24px;
 }
-.options{
+
+/* Options container */
+.options {
     display: flex;
     align-items: center;
-    gap:24px;
+    gap: 24px;
     font-size: 14px;
 }
 
+/* Style for radio buttons and checkboxes */
 input[type="radio"],
 input[type="checkbox"] {
-  accent-color: var(--sidebar-color);
+    accent-color: var(--sidebar-color);
 }
-.top{
+
+/* Top section with title and controls */
+.top {
     display: flex;
     width: 100%;
     padding-bottom: 17px;
@@ -27,63 +32,80 @@ input[type="checkbox"] {
     border-bottom: 1px solid var(--line-option-bottom);
     line-height: 22px;
 }
-#add-new, #compare-button{
+
+/* Buttons: Add New and Compare */
+#add-new, #compare-button {
     display: flex;
     align-items: center;
     color: #FFFFFF;
-    gap:4px;
+    gap: 4px;
     justify-content: center;
     border-radius: 6px;
     width: 150px;
 }
+
+/* Button background colors */
 .not {
-    background-color:var(--button-colors);
+    background-color: var(--button-colors);
 }
-.activated{
+.activated {
     background-color: var(--not-activated-button);
 }
-#add-new img{
+
+/* Add-new button icon */
+#add-new img {
     width: 24px;
     height: 24px;
 }
-#compare-button{
+
+/* Compare button specific styles */
+#compare-button {
     width: 142px;
     height: 48px;
     border-style: none;
 }
-@media(max-width:1024px){
-    main{
-        width:auto;
+
+/* Responsive: Tablets and smaller screens */
+@media(max-width:1024px) {
+    main {
+        width: auto;
         padding: 28px;
     }
-
 }
+
+/* Responsive: Mobile screens */
 @media (max-width: 768px) {
-    .top{
+    /* Top section stacked on mobile */
+    .top {
         flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 100%;
     }
 
+    /* Options stacked on mobile */
     .options {
         flex-direction: column;
         width: 100%;
         justify-content: center;
         align-items: center;
         padding: 0px;
-        gap:16px;
+        gap: 16px;
     }
-    .options>div, .options>label{
+
+    /* Options children full width */
+    .options > div, .options > label {
         width: 100%;
     }
-    #add-new{
+
+    /* Add-new button full width on mobile */
+    #add-new {
         margin-top: 20px;
         width: 100%;
         height: 42px;
     }
-    main{
+
+    main {
         padding: 16px;
     }
-
 }

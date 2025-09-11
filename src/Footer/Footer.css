@@ -1,4 +1,5 @@
-footer{
+/* Footer container */
+footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -7,28 +8,33 @@ footer{
     padding: 20px 14px 20px 12px;
     border-top: 1px solid var(--line-color);
 }
-#profile{
+
+/* Profile section inside footer */
+#profile {
     display: flex;
     align-items: center;
-    gap:5px;
+    gap: 5px;
 }
-#profile-icon{
+
+/* Profile icon styling */
+#profile-icon {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 20px;
     height: 20px;
     background-color: var(--profile-icon-color);
-    border-radius: 50%;
-    border-radius: 50%;
+    border-radius: 50%; /* Make it circular */
     border: 1px solid white;
     font-size: 10px;
     font-weight: bold;
     color: var(--text-color);
     line-height: 24px;
 }
-@media (max-width:1024px) {
-    footer{
+
+/* Hide footer on smaller screens */
+@media (max-width: 1024px) {
+    footer {
         display: none;
     }
 }

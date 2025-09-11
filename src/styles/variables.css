@@ -1,16 +1,29 @@
-:root{
-    --correct-text-color:#3EBC5E;
-    --sidebar-color:#132450FF;
-    --compare-button-color: #007AFF;
-    --text-color:#132450;
-    --line-color: #9EB9FF33;
-    --profile-icon-color:#9EC8FFFF;
-    --option-text-color:#383A48;
-    --button-colors:#4571E4;
-    --not-activated-button:#888991FF;
-    --line-option-bottom:#EDEDED;
-    --input-background-color:#F0F7FF;
-    --removed-text-color: #FF2D55;
-    --added-text-color: #3EBC5E;
-    --loading-bar-color:#4571E4FF;
+:root {
+    /* Text colors */
+    --correct-text-color: #3EBC5E; /* Green for correct text */
+    --text-color: #132450;         /* Default text color */
+    --option-text-color: #383A48;  /* Text color for options */
+
+    /* Sidebar & buttons */
+    --sidebar-color: #132450FF;    /* Sidebar background */
+    --compare-button-color: #007AFF; /* Compare button background */
+    --button-colors: #4571E4;      /* Primary button color */
+    --not-activated-button: #888991FF; /* Disabled button color */
+
+    /* Lines & borders */
+    --line-color: #9EB9FF33;       /* General line/border color */
+    --line-option-bottom: #EDEDED; /* Bottom line for options */
+
+    /* Profile */
+    --profile-icon-color: #9EC8FFFF; /* Profile icon background */
+
+    /* Inputs */
+    --input-background-color: #F0F7FF; /* Background for editable divs */
+
+    /* Compare text highlighting */
+    --removed-text-color: #FF2D55; /* Highlight removed text */
+    --added-text-color: #3EBC5E;   /* Highlight added text */
+
+    /* Loading bar */
+    --loading-bar-color: #4571E4FF; /* Color of animated loading line */
 }

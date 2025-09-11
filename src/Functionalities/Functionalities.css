@@ -1,58 +1,75 @@
-.functionalities{
+/* Container for functionality buttons/items */
+.functionalities {
     display: flex;
     flex-direction: column;
     width: 100%;
     background-color: white;
 }
-.functionalities > div{
+
+/* Each functionality item */
+.functionalities > div {
     display: flex;
     align-items: center;
     height: 60px;
     width: 100%;
     background-color: var(--sidebar-color);
-    
 }
-#top{
-    border-bottom-right-radius: 16px;
 
+/* Top item rounded corner */
+#top {
+    border-bottom-right-radius: 16px;
 }
-#bottom{
+
+/* Bottom item rounded corner */
+#bottom {
     border-top-right-radius: 16px;
 }
-.icon{
+
+/* Icon inside functionality item */
+.icon {
     width: 24px;
     height: 24px;
     padding-right: 20px;
 }
-.arrow{
+
+/* Arrow icon next to items */
+.arrow {
     width: 16px;
     height: 16px;
     padding: 0 4px;
 }
-#compare-text{
+
+/* Compare text button */
+#compare-text {
     background-color: white;
     color: var(--sidebar-color);
     font-weight: bold;
     height: 50px;
-    border-radius: 30px 0 0  30px;
+    border-radius: 30px 0 0 30px;
     width: 230px;
     margin-left: -20px;
     padding-left: 20px;
-
-    
 }
-#down-arrow{
+
+/* Down arrow inside compare button (hidden by default) */
+#down-arrow {
     display: none;
 }
+
+/* Responsive styles for tablets and smaller screens */
 @media (max-width: 1024px) {
-    .functionalities > div{
+    /* Hide functionality items */
+    .functionalities > div {
         display: none;
     }
-    .functionalities{
+
+    /* Full width for functionalities container */
+    .functionalities {
         width: 100vw;
     }
-    #compare-text{
 
+    /* Adjust compare-text button for mobile */
+    #compare-text {
         left: 0px;
         display: flex;
         border-radius: 0px;
@@ -60,11 +77,12 @@
         min-height: 72px;
         padding: 0px 30px;
         width: 100%;
-        margin:0;
+        margin: 0;
     }
-    #down-arrow{
+
+    /* Show down arrow on mobile */
+    #down-arrow {
         display: flex;
         padding-left: 4px;
     }
-
 }
