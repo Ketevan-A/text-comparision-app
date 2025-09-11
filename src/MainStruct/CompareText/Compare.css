@@ -48,11 +48,13 @@
     /* Adjust text area height and padding */
     .fake-textarea {
         height: 166px;
-        padding: 0;
+
     }
 
     /* Rotate the arrow image */
     .compare > img {
         rotate: 90deg;
     }
+
+
 }

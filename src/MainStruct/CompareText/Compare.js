@@ -34,7 +34,12 @@ const Compare = forwardRef((props, ref) => {
     setText2(secondRef.current.innerText);//saves current text from the first div into
     props.onTextChange?.(text1.length > 0 || secondRef.current.innerText.length > 0);//state and call a parent calllback
   }
-
+  function handleKeyDown(e) {
+  if (e.key === "Enter") {
+    e.preventDefault(); // prevent newline in contentEditable
+    ref.current?.runCompare?.(); // call compare function
+  }
+}
   //functions for parent to access this compare component
   useImperativeHandle(ref, () => ({
     runCompare() {
@@ -85,6 +90,7 @@ const Compare = forwardRef((props, ref) => {
         contentEditable
         data-placeholder="დაიწყე წერა..."
         onInput={handleInput1}
+        onKeyDown={handleKeyDown}
       ></div>
       <img src="/images/Group.png" alt="arrow" />
       <div
@@ -93,6 +99,7 @@ const Compare = forwardRef((props, ref) => {
         contentEditable
         data-placeholder="დაიწყე წერა..."
         onInput={handleInput2}
+        onKeyDown={handleKeyDown}
       ></div>
     </div>
   );
