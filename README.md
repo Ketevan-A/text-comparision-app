@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+📝 Text Comparison and Difference Highlighting App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository hosts a robust and user-friendly web application designed for analyzing and visualizing the differences between two blocks of text. Built for developers, writers, and editors, the application efficiently compares submitted content and highlights inserted, deleted, and modified segments using a clear, color-coded interface.
 
-## Available Scripts
+✨ Key Features
 
-In the project directory, you can run:
+Diffing Algorithm Integration: Utilizes an efficient text-diffing algorithm (e.g., Levenshtein or a custom implementation) to accurately calculate and identify discrepancies between the two inputs.
 
-### `npm start`
+Intuitive Visualization: Differences are rendered using standard color-coding conventions (e.g., green for additions, red for deletions) for immediate visual clarity.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Real-Time Comparison: The comparison process executes instantly upon input changes, providing immediate feedback without the need for manual submission buttons or page reloads.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Clipboard Functionality: Includes convenient buttons or features to easily copy the original text, the modified text, or the resulting difference-highlighted output.
 
-### `npm test`
+Responsive Layout: The application is designed to function flawlessly and maintain readability across all devices, ensuring the input fields and comparison results stack logically on mobile viewports.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+🛠️ Technology Stack
 
-### `npm run build`
+HTML5 & CSS3: Provides the structural foundation and a clean, modern aesthetic for the user interface.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+JavaScript (ES6+): Manages the core application logic, including the text input handling, the diffing calculation, and the dynamic rendering of the comparison results.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Frontend Framework (If Applicable): [Optional: Add framework like React, Vue, or Angular if used, e.g., "React: Utilized for component-based architecture and state management."]
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+🚀 Getting Started
 
-### `npm run eject`
+This application is typically a pure frontend project, requiring no backend server to run.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Clone the repository:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+git clone [https://github.com/Ketevan-A/text-comparision-app.git](https://github.com/Ketevan-A/text-comparision-app.git)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Navigate to the project directory:
 
-## Learn More
+cd text-comparision-app
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Open the file:
+Open the main HTML file (usually index.html) in your web browser to start using the comparison tool.
